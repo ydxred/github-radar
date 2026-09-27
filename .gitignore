@@ -1,0 +1,44 @@
+# Dependencies and generated builds
+node_modules/
+/browser-extension/
+/dist/
+__pycache__/
+*.pyc
+
+# Personal data, credentials, local models and logs
+/data/
+.env
+.env.*
+!.env.example
+*.log
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.pem
+*.key
+*.gguf
+*.download
+
+# Local deployment and publishing records
+/docs/local/
+/docs/验收记录.md
+/store-site/
+/store-assets/*
+!/store-assets/icon-128.png
+!/store-assets/promo-440x280.png
+!/store-assets/promo-440x280.svg
+!/store-assets/promo-1400x560.png
+!/store-assets/promo-1400x560.svg
+!/store-assets/screenshots/
+/store-assets/screenshots/*
+!/store-assets/screenshots/screenshot-01-newtab-1280x800.png
+
+# Editor and operating system files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280" role="img" aria-labelledby="title description">
+  <title id="title">开源雷达</title>
+  <desc id="description">品牌宣传图。每个新标签页，发现好项目。GitHub 热门、金融量化、本地收藏。</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8faf5"/>
+      <stop offset="1" stop-color="#eef4e7"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#ddedc8" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#ddedc8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="440" height="280" fill="url(#paper)"/>
+  <circle cx="406" cy="99" r="157" fill="url(#glow)"/>
+  <g fill="none" stroke="#d8e5ca" stroke-width="1">
+    <circle cx="398" cy="93" r="120"/>
+    <circle cx="398" cy="93" r="83"/>
+    <circle cx="398" cy="93" r="43"/>
+    <path d="M278 93H440M398 0V213" stroke-opacity=".5"/>
+  </g>
+  <path d="M398 93 440 0H440V93Z" fill="#cadeb1" opacity=".36"/>
+  <path d="M398 93 440 0" fill="none" stroke="#a9c58a" stroke-width="1.5"/>
+  <circle cx="336" cy="147" r="4" fill="#a4bf87"/>
+  <circle cx="375" cy="57" r="3" fill="#bdd29f"/>
+  <circle cx="336" cy="147" r="9" fill="none" stroke="#c8dab5"/>
+  <!-- Existing public/icon.svg geometry, unchanged and scaled as a group. -->
+  <g transform="translate(28 27) scale(.6875)">
+    <rect width="64" height="64" rx="18" fill="#242a27"/>
+    <circle cx="32" cy="32" r="19" fill="none" stroke="#b5ec77" stroke-width="3"/>
+    <circle cx="32" cy="32" r="10" fill="none" stroke="#b5ec77" stroke-width="2" opacity=".5"/>
+    <path d="M32 32 45 19" stroke="#b5ec77" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="24" cy="40" r="4" fill="#b5ec77"/>
+  </g>
+  <g font-family="Noto Sans CJK SC, sans-serif">
+    <text x="84" y="46" font-size="9" font-weight="700" letter-spacing="1.45" fill="#697b60">OPEN SOURCE RADAR</text>
+    <text x="84" y="63" font-size="10" letter-spacing="1.7" fill="#87947e">为好奇心，留一扇窗</text>
+    <text x="26" y="136" font-size="41" font-weight="900" letter-spacing="1.5" fill="#26322b">开源雷达</text>
+    <text x="29" y="175" font-size="19" font-weight="500" fill="#56664f">每个新标签页，发现好项目</text>
+    <rect x="28" y="213" width="384" height="39" rx="11" fill="#26322b"/>
+    <circle cx="46" cy="232.5" r="3" fill="#b5ec77"/>
+    <text x="60" y="237.5" font-size="13" font-weight="500" letter-spacing=".25" fill="#e5efd9">GitHub 热门 · 金融量化 · 本地收藏</text>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+{
+  "name": "github-top",
+  "version": "2.1.0",
+  "private": true,
+  "type": "module",
+  "description": "开源雷达 · 本机 GitHub 热门项目看板",
+  "scripts": {
+    "start": "node server/index.mjs",
+    "check": "node --check server/index.mjs && node --check server/extension-origin.mjs && node --check server/github.mjs && node --check server/store.mjs && node --check server/collector.mjs && node --check server/settings.mjs && node --check server/summary.mjs && node --check server/codex-summary.mjs && node --check public/app.js && node --check extension/bridge.js && node --check scripts/build-extension.mjs && node --check extension/storage.js && node --check extension/github-client.js && node --check extension/api.js && node --check extension/local-ai.js",
+    "build:extension": "node scripts/build-extension.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "package:extension": "npm run build:extension && python3 scripts/package-extension.py"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "cheerio": "1.1.2"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "^6.2.5"
+  }
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="description" content="你的 GitHub 热门项目看板。发现开源趋势、收藏好项目，在本机轻松浏览。"><title>开源雷达 · GitHub 热门</title><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<div class="app-shell">
+<aside class="sidebar">
+  <a class="brand" href="/"><img src="/icon.svg" alt="" width="36" height="36"><span>开源雷达<small>GITHUB RADAR</small></span></a>
+  <div class="workspace-label">我的开源工作台</div>
+  <nav aria-label="主导航">
+    <button class="nav-item active" data-view="trending"><span data-icon="flame"></span>热门趋势<span class="nav-dot"></span></button>
+    <button class="nav-item" data-view="topics"><span data-icon="chart"></span>领域发现</button>
+    <button class="nav-item" data-view="discoveries"><span data-icon="sparkles"></span>新发现<span id="discoveries-count" class="nav-count">0</span></button>
+    <button class="nav-item" data-view="favorites"><span data-icon="bookmark"></span>我的收藏<span id="favorites-count" class="nav-count">0</span></button>
+    <button class="nav-item" data-view="history"><span data-icon="clock"></span>最近浏览<span id="history-count" class="nav-count">0</span></button>
+    <button class="nav-item" data-view="updates"><span data-icon="refresh"></span>收藏动态</button>
+  </nav>
+  <div class="sidebar-divider"></div>
+  <div class="workspace-label">领域发现 · 全部本机收录</div>
+  <nav aria-label="领域筛选">
+    <button class="topic-nav" data-topic="AI 与智能体"><span data-icon="sparkles"></span>AI 与智能体<span class="topic-count" data-topic-count>0</span></button>
+    <button class="topic-nav" data-topic="开发工具"><span data-icon="code"></span>开发工具<span class="topic-count" data-topic-count>0</span></button>
+    <button class="topic-nav" data-topic="数据与分析"><span data-icon="chart"></span>数据与分析<span class="topic-count" data-topic-count>0</span></button>
+    <button class="topic-nav" data-topic="金融与量化"><span data-icon="trend"></span>金融与量化<span class="topic-count" data-topic-count>0</span></button>
+    <button class="topic-nav" data-topic="学习资源"><span data-icon="book"></span>学习资源<span class="topic-count" data-topic-count>0</span></button>
+    <button class="topic-nav" data-topic="开源探索"><span data-icon="radar"></span>开源探索<span class="topic-count" data-topic-count>0</span></button>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="local-note"><span class="status-dot"></span>你的本地开源角落<p>数据落在本机，每日自动备份。</p></div>
+    <button class="quiet-button" id="settings-button"><span data-icon="settings"></span>设置与本机数据</button>
+    <button class="quiet-button" id="help-button"><span data-icon="help"></span>使用指南与数据说明</button>
+    <div class="sidebar-footer"><span>为好奇心，留一扇窗。</span><span>v2.1</span></div>
+  </div>
+</aside>
+<div class="main-shell">
+  <header class="topbar"><div class="breadcrumb">发现 <span>/</span> <strong id="breadcrumb-current">热门趋势</strong></div><div class="top-actions"><span class="local-badge"><span class="status-dot"></span>本机运行</span><button class="icon-button" id="top-settings" aria-label="设置与本机数据" title="设置与本机数据"><span data-icon="settings"></span></button><button class="icon-button" id="theme-button" aria-label="切换深色模式" title="切换深色模式"><span data-icon="moon"></span></button><a class="icon-button" href="https://github.com/trending" target="_blank" rel="noopener noreferrer" aria-label="打开 GitHub Trending"><span data-icon="github"></span></a></div></header>
+  <main id="main-content">
+    <section class="page-heading"><div><div class="eyebrow">THE OPEN SOURCE EDIT</div><h1 id="page-title">好项目，值得被发现<span class="title-dot">.</span></h1><p id="page-subtitle">看见开源世界正在发生什么，找到下一个让你眼前一亮的项目。</p></div><div class="date-block"><span id="today-date"></span><span id="today-weekday"></span></div></section>
+    <section class="daily-brief" id="brief"><div class="brief-icon"><span data-icon="radar"></span></div><div class="brief-copy"><span class="brief-label">本期发现 <span class="live-chip">GITHUB TRENDING</span></span><h2 id="brief-title">正在连接开源世界…</h2><p id="brief-description">读取 GitHub 公开榜单，稍等片刻就好。</p></div><div class="brief-stats"><div><strong id="stat-repos">—</strong><span>上榜项目</span></div><div><strong id="stat-stars">—</strong><span id="stat-stars-label">本日新增 Star</span></div><div><strong id="stat-languages">—</strong><span>编程语言</span></div></div></section>
+    <section class="arrival-strip"><button id="new-arrivals"><span data-icon="sparkles"></span><span id="arrival-text">正在打开本机资料库…</span><span data-icon="arrow"></span></button><span id="storage-status">本机数据库</span></section>
+    <section class="collection-toolbar" aria-label="看板筛选"><p class="filter-scope" id="filter-scope">筛选当前榜单 · 左侧领域发现可查看全部收录</p>
+      <div class="toolbar-line"><div class="period-tabs" role="group" aria-label="趋势周期"><button data-period="daily" class="selected">今日</button><button data-period="weekly">本周</button><button data-period="monthly">本月</button></div><div class="toolbar-actions"><label class="search-field"><span data-icon="search"></span><input id="search-input" type="search" placeholder="搜索项目、作者或关键词…" aria-label="搜索当前列表"><kbd>/</kbd></label><button id="refresh-button" class="soft-button"><span data-icon="refresh"></span><span>刷新榜单</span></button></div></div>
+      <div class="toolbar-line second-line"><div class="filter-controls"><label class="select-wrap"><span data-icon="code"></span><select id="language-filter" aria-label="编程语言"><option value="">所有语言</option><option value="python">Python</option><option value="typescript">TypeScript</option><option value="javascript">JavaScript</option><option value="go">Go</option><option value="rust">Rust</option><option value="java">Java</option><option value="c++">C++</option><option value="c">C</option><option value="c#">C#</option><option value="swift">Swift</option><option value="kotlin">Kotlin</option><option value="php">PHP</option><option value="ruby">Ruby</option><option value="shell">Shell</option><option value="jupyter-notebook">Jupyter Notebook</option><option value="html">HTML</option><option value="css">CSS</option></select></label><div class="filter-separator"></div><button class="topic-chip selected" data-topic="all">全部领域<span class="topic-count" data-topic-count>0</span></button><button class="topic-chip" data-topic="AI 与智能体">✧ AI 与智能体<span class="topic-count" data-topic-count>0</span></button><button class="topic-chip" data-topic="开发工具">开发工具<span class="topic-count" data-topic-count>0</span></button><button class="topic-chip" data-topic="数据与分析">数据与分析<span class="topic-count" data-topic-count>0</span></button><button class="topic-chip" data-topic="金融与量化">金融与量化<span class="topic-count" data-topic-count>0</span></button><button class="topic-chip" data-topic="学习资源">学习资源<span class="topic-count" data-topic-count>0</span></button><button class="topic-chip" data-topic="开源探索">开源探索<span class="topic-count" data-topic-count>0</span></button></div><div class="view-controls"><select id="reading-filter" aria-label="阅读状态"><option value="all">全部项目</option><option value="unread">只看未读</option><option value="new">上次之后新发现</option><option value="hidden">已隐藏</option></select><select id="sort-select" aria-label="排序方式"><option value="rank">榜单顺序</option><option value="growth">新增 Star 优先</option><option value="stars">总 Star 优先</option><option value="name">项目名称 A–Z</option></select><div class="view-toggle"><button id="grid-button" class="selected" aria-label="卡片视图" title="卡片视图"><span data-icon="grid"></span></button><button id="list-button" aria-label="列表视图" title="列表视图"><span data-icon="list"></span></button></div></div></div>
+    </section>
+    <div class="results-heading"><div><h2 id="results-title">今日热门</h2><span id="result-count" class="count-pill">…</span><span id="active-topic"></span></div><span id="update-status" role="status">正在获取最新榜单</span></div>
+    <div id="data-notice" class="notice" hidden></div>
+    <div id="collection-actions" class="collection-actions" hidden><button class="soft-button" id="export-button"><span data-icon="download"></span>导出收藏</button><button class="soft-button" id="import-button"><span data-icon="upload"></span>导入收藏</button><input type="file" id="import-file" accept="application/json" hidden><span>收藏和笔记保存在本机数据库，导出可额外留一份。</span></div>
+    <section id="updates-panel" class="updates-panel" hidden></section>
+    <section id="repo-grid" class="repo-grid" aria-label="项目列表" aria-live="polite" aria-busy="true"></section>
+    <footer class="content-footer"><span><span class="status-dot"></span> 来源 <a id="source-link" href="https://github.com/trending" target="_blank" rel="noopener noreferrer">GitHub Trending <span data-icon="external"></span></a><span class="footer-divider">·</span>页面每 30 分钟检查 · 后台按关注范围采集</span><button id="footer-help">热度是如何计算的？<span data-icon="arrow"></span></button></footer>
+  </main>
+</div>
+</div>
+<dialog id="detail-dialog" class="detail-dialog"><div class="dialog-top"><span class="eyebrow">PROJECT INSIDE</span><button class="icon-button close-dialog" aria-label="关闭详情"><span data-icon="close"></span></button></div><div id="detail-content"></div></dialog>
+<dialog id="help-dialog" class="help-dialog"><div class="dialog-top"><span class="eyebrow">A LITTLE FIELD GUIDE</span><button class="icon-button close-dialog" aria-label="关闭指南"><span data-icon="close"></span></button></div><h2>把好项目，慢慢收进来。</h2><p class="help-intro">榜单联网获取，收藏和历史留在本机。中文解读可选本机 Codex 联网解读或 Qwen 离线推理。GitHub Token 可选。</p><div class="help-sections"><section><h3>01 · 从今天开始逛</h3><p>切换今日、本周、本月和编程语言，读取对应的 GitHub Trending 榜单。顶部搜索与领域标签筛选当前列表；左侧“领域发现”汇集本机已采集的不同周期和语言榜，不局限于当前热门榜。领域根据项目名称和简介推断，一个项目可以属于多个领域，数量不能直接相加；分类可能有遗漏。卡片注明最后收录的来源榜单，收录库不是 GitHub 全站。“新发现”是本机首次收录，并不代表项目刚创建。</p></section><section><h3>02 · 看到喜欢的，先收藏</h3><p>点击项目右上角的书签，保存项目快照。收藏、浏览记录、笔记和偏好存入这台电脑的数据库，不会给 GitHub 账号点 Star。首次升级会合并旧浏览器数据。每天自动备份，设置里可手动备份或恢复；导出文件不包含 Token。</p></section><section><h3>03 · 读懂数字</h3><p>Star 是累计收藏数；“本日 / 本周 / 本月新增”来自 GitHub 对应榜单。默认保持官方榜单顺序，不代表投资价值或代码质量。收藏和历史中的数字是保存时的快照。</p></section><section><h3>04 · 网慢时也从容一点</h3><p>榜单在本机缓存 30 分钟，页面打开时每 30 分钟检查更新，后台按关注范围采集；也可以手动刷新（同一榜单 1 分钟内复用缓存）。网络异常会保留上次成功数据并标明时间。后台采集可在设置中暂停或调整。电脑关机、休眠期间不采集，恢复后读取当前榜单，不补造历史。项目详情使用 GitHub 公开接口，剩余额度可在设置里查看。</p></section><section><h3>05 · 顺手的小功能</h3><p>按 / 快速搜索，Esc 关闭详情。详情里可以写一条私人笔记、复制克隆地址，或直接打开 GitHub 阅读 README。右上角支持明暗切换。中文速读可选 Codex 联网解读或 Qwen 本机离线推理。Codex 使用现有登录与额度，只接收公开 README；笔记不参与生成。结果可能出错，可点来源核对，生成后会在本机缓存。</p></section></div><div class="help-bottom">每天一点好奇，积累一点灵感。<span>开源雷达</span></div></dialog>
+<dialog id="settings-dialog" class="settings-dialog"><div class="dialog-top"><span class="eyebrow">YOUR LOCAL WORKSPACE</span><button class="icon-button close-dialog" aria-label="关闭设置"><span data-icon="close"></span></button></div><h2>把雷达调成你的节奏</h2><p class="settings-intro">个人数据与备份留在这台电脑。中文解读的联网方式可以单独选择。</p><div id="settings-content"></div></dialog>
+<dialog id="restore-dialog" class="help-dialog"><h2>恢复这份本机备份？</h2><p>当前收藏、笔记和历史会恢复到所选备份的状态。恢复前会自动保存一份当前数据，可以再恢复回来。GitHub Token 和采集设置不受影响。</p><p id="restore-name"></p><div class="detail-actions"><button class="primary-button" id="confirm-restore">确认恢复</button><button class="soft-button" id="cancel-restore">取消</button></div></dialog>
+<div id="toast" role="status" class="toast" hidden></div>
+</body></html>

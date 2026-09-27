@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "开源雷达 · 新标签页",
+  "short_name": "开源雷达",
+  "version": "2.0.0",
+  "description": "打开新标签页，发现 GitHub 热门与金融量化项目。无需账号或本机服务，收藏笔记保存在浏览器；可选连接自己的本机 Codex。",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4EkBbbE1+0WMS1TDpjkqP5Omh692GVduZC2pO9R+gFBzZzQhn3t8m7FVkdn0suqhICCX9YLhNaA0KZCR3+1lNJs0PzlOmMssFvLLDMziqrSiHeWBTLRz26jEYk4w79X3BVYGKvtZo4IKXQwRmXqS789OgjOpaXDCs6Ccj+fU9Zs0tyxCtHaAicfUC/xcXMjamDJRmW/dXYFJrtTFx8JyXNJuL52WsCBoWQuLMpUw96AynDGDvqtt0EdOEvs81JBAia2dJ0LR7jrHtPUPIGatRfUkUcPiJvOcPdIcsVtnOpWAScqIIvQwvOR3M+qRbpEtg5gI9G0PfDzh4YhX+ELNjQIDAQAB",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "host_permissions": [
+    "https://github.com/*",
+    "https://api.github.com/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://avatars.githubusercontent.com data:; connect-src https://github.com https://api.github.com http://127.0.0.1:4317; object-src 'none'; base-uri 'self'; form-action 'none'"
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "minimum_chrome_version": "120",
+  "optional_host_permissions": [
+    "http://127.0.0.1:4317/*"
+  ],
+  "author": "ydxred"
+}

@@ -1,0 +1,17 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>隐私说明 · 开源雷达</title><link rel="icon" href="icon.svg"><style>body{font-family:system-ui,sans-serif;max-width:800px;margin:48px auto;padding:0 24px;background:#f7f8f5;color:#27322b;line-height:1.85}h1{font-size:32px}h2{margin-top:32px;font-size:21px}a{color:#3c6337}.meta{color:#69756b}main{background:white;padding:32px;border:1px solid #e1e7dd;border-radius:18px}li{margin:9px 0}@media(prefers-color-scheme:dark){body{background:#172019;color:#e1ebdf}main{background:#202b23;border-color:#43533f}a{color:#b7dca5}.meta{color:#a6b5a2}}</style></head><body><main>
+<p class="meta">开源雷达 · 新标签页 / 独立版 2.0.0</p><h1>你的收藏，留在你的浏览器。</h1><p class="meta">更新日期：2026 年 9 月 27 日</p>
+<p>本说明适用于开源雷达 Chrome 新标签页扩展。基础功能无需注册账号、提供密钥或安装本机服务。扩展不接入广告、统计分析 SDK，也不把你的私人笔记上传至开发者服务器。</p>
+<h2>在浏览器中保存什么</h2><p>扩展使用当前浏览器的 IndexedDB 和本地存储保存收藏项目、你输入的笔记、在本扩展内浏览过的项目、已读与隐藏标记、显示偏好、采集设置、GitHub 公开榜单和详情缓存、采集时间与快照、本地备份及可选 Codex 连接开关。它不读取浏览器其他标签页、全局浏览历史、Cookie、密码或 Codex 登录凭证。</p>
+<p>资料只保存在当前浏览器配置中，不会自动跨设备同步。本地备份与主资料位于同一个浏览器内；卸载扩展、删除浏览器配置或清除扩展数据可能删除它们。你可以在设置中导出资料 JSON 并自行保管，或导入你已有的资料。</p>
+<p>个人资料总量上限为 8 MB，按实际导出 JSON 的 UTF-8 大小计算，包括兼容旧版所需的收藏备注字段；GitHub 公开榜单、详情等缓存不计入这个上限。收藏、笔记或导入合并后的资料超限时，本次保存会被拒绝并显示原因，已有资料不变。请先导出资料，再减少不需要的记录；单个导入文件也不能超过 8 MB。</p>
+<h2>访问哪些网络服务</h2><ul>
+<li><strong>GitHub（github.com、api.github.com）：</strong>用于读取你选择的公开榜单、项目详情、公开版本信息，以及检查匿名接口额度。GitHub 会收到正常网络请求附带的 IP 等连接信息和被请求的榜单、项目标识。扩展不向 GitHub 发送笔记，不执行账号 Star，也不保存 GitHub Token。</li>
+<li><strong>GitHub 头像（avatars.githubusercontent.com）：</strong>页面显示项目作者头像时，浏览器会向头像服务请求对应图片。</li>
+<li><strong>可选本机服务（127.0.0.1:4317）：</strong>默认不连接。只有你点击“连接本机 Codex”并授予可选权限后，扩展才检查服务。点击生成时，扩展仅发送当前公开项目标识、解读模式和刷新选项；不发送收藏列表、私人笔记或浏览记录。断开功能会撤销扩展访问该本机地址的权限。</li>
+</ul>
+<h2>可选 Codex 解读</h2><p>本机配套服务需要你自己安装并使用 ChatGPT 登录 Codex。点击生成后，服务读取公开 README 节选并通过 Codex 发送给 OpenAI，由云端模型生成中文解读，使用你自己的 Codex 额度；这不是离线推理。扩展自身不接收你的登录凭证。服务可能在你的电脑中缓存 README 和生成结果，断开扩展不会删除配套服务的缓存。关闭可选功能不影响榜单、收藏、笔记和备份。</p>
+<p>GitHub 与 OpenAI 按各自的政策处理收到的数据，可参考 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub 隐私声明</a> 和 <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer">OpenAI 隐私政策</a>。</p>
+<h2>保存期限和你的控制</h2><p>收藏和笔记会保留到你删除、恢复其他备份或清除扩展数据。最近浏览最多保留 100 个项目；收录库最多 3,000 个项目；每个项目的每个周期最多保留 100 条观测（另有总量上限）；本地备份最多 14 份。部分旧公开缓存会轮换清理。你可以暂停采集、取消收藏、清空单条笔记、隐藏项目、导出资料或撤销本机连接。采集仅在开源雷达标签页保持打开时进行，浏览器关闭时停止。</p>
+<h2>数据用途</h2><p>数据仅用于展示公开项目、保存你的阅读资料及你主动开启的解读功能。我们不会出售个人数据，不会用于广告投放、信用评估或与上述功能无关的用途。扩展的用户数据使用符合 Chrome Web Store 的 Limited Use 要求。</p>
+<h2>联系与变更</h2><p>开发者：ydxred。支持与隐私问题请联系 <a href="mailto:xxsqqtom@gmail.com">xxsqqtom@gmail.com</a>。若功能或数据用途发生变化，本说明会随扩展版本更新；需要新的权限时，由浏览器另行请求你的同意。</p>
+<p><a href="newtab.html">返回开源雷达</a></p></main></body></html>
