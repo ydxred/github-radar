@@ -41,7 +41,7 @@
 
 ## 安装独立扩展
 
-**直接安装**：在 [Releases](https://github.com/ydxred/github-radar/releases/latest) 下载“独立本地安装”ZIP，解压到长期保留的文件夹。使用安装包不需要 Node.js 或 Python。
+**直接安装**：在 [Releases](https://github.com/ydxred/github-radar/releases/latest) 下载 `github-radar-chrome-v2.0.0.zip`，解压到长期保留的文件夹。使用安装包不需要 Node.js 或 Python。
 
 **从源码构建**：需要 Node.js 24 或更新版本及 npm。
 
